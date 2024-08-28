@@ -1,0 +1,27 @@
+#include "charybdis_4x6.dtsi"
+
+&default_transform {
+    col-offset = <6>;
+};
+
+&kscan0 {
+    debounce-press-ms = <8>;
+    debounce-release-ms = <16>;
+    row-gpios
+        = <&pro_micro 1 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+        , <&pro_micro 0 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+        , <&pro_micro 2 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+        ;
+
+    col-gpios
+        = <&pro_micro  7 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 10 GPIO_ACTIVE_HIGH>
+        , <&pro_micro  8 GPIO_ACTIVE_HIGH>
+        , <&pro_micro  9 GPIO_ACTIVE_HIGH>
+        , <&pro_micro  3 GPIO_ACTIVE_HIGH>
+        ;
+};
+
+&bootloader_key_right {
+    status = "okay";
+};
