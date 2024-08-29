@@ -1,0 +1,9 @@
+file_format: "1"
+id: splinky
+name: splinky
+type: board
+arch: arm
+outputs:
+  - usb
+url: https://github.com/Bastardkb/Splinky
+exposes: [pro_micro]

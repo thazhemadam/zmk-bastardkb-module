@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2021 Yonatan Schachter
+ * Copyright (c) 2024 burkfers
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,12 +8,12 @@
 /dts-v1/;
 
 #include <rpi_pico/rp2040.dtsi>
-#include "svlinky-pinctl.dtsi"
+#include "splinky-pinctl.dtsi"
 #include <freq.h>
 
 / {
-	model = "svlinky";
-	compatible = "sadekbaroudi,svlinky", "raspberrypi,rp2040";
+	model = "splinky";
+	compatible = "bastardkb,splinky", "raspberrypi,rp2040";
 
 	chosen {
 		zephyr,sram = &sram0;
@@ -28,13 +29,13 @@
 	};
 };
 
-#define SVLINKY_FLASH_SIZE_M 4
+#define SPLINKY_FLASH_SIZE_M 8
 
 &flash0 {
 	/* 8MB of flash minus the 0x100 used for
 	 * the second stage bootloader
 	 */
-	reg = <0x10000000 DT_SIZE_M(SVLINKY_FLASH_SIZE_M)>;
+	reg = <0x10000000 DT_SIZE_M(SPLINKY_FLASH_SIZE_M)>;
 
 	partitions {
 		compatible = "fixed-partitions";
@@ -47,7 +48,7 @@
 		 */
 		code_partition: partition@100 {
 			label = "code";
-			reg = <0x100 (DT_SIZE_M(SVLINKY_FLASH_SIZE_M) - 0x100)>;
+			reg = <0x100 (DT_SIZE_M(SPLINKY_FLASH_SIZE_M) - 0x100)>;
 			read-only;
 		};
 	};

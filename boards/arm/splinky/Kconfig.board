@@ -1,6 +1,7 @@
 # Copyright (c) 2021 Pete Johanson
+# Copyright (c) 2024 burkfers
 # SPDX-License-Identifier: Apache-2.0
 
-config BOARD_SVLINKY
-	bool "svlinky"
+config BOARD_SPLINKY
+	bool "splinky"
 	depends on SOC_RP2040

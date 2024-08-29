@@ -1,9 +1,0 @@
-file_format: "1"
-id: svlinky
-name: svlinky
-type: board
-arch: arm
-outputs:
-  - usb
-url: https://github.com/sadekbaroudi/vik
-exposes: [pro_micro, sadekbaroudi_vik]

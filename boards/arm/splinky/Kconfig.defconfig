@@ -1,10 +1,11 @@
 # Copyright (c) 2021 Pete Johanson
+# Copyright (c) 2024 burkfers
 # SPDX-License-Identifier: Apache-2.0
 
-if BOARD_SVLINKY
+if BOARD_SPLINKY
 
 config BOARD
-	default "svlinky"
+	default "splinky"
 
 config RP2_FLASH_W25Q080
 	default y
