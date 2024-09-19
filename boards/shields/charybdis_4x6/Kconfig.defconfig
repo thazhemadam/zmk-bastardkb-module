@@ -11,6 +11,8 @@ endif
 if SHIELD_CHARYBDIS_4X6_LEFT || SHIELD_CHARYBDIS_4X6_RIGHT
 
 config ZMK_SPLIT
-    default n
+    default y
+config ZMK_SPLIT_SERIAL
+    default y
 
 endif

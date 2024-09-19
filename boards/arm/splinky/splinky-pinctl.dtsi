@@ -1,65 +1,32 @@
 /*
  * Copyright (c) 2021, Yonatan Schachter
- * Copyright (c) 2024 burkfers
  * SPDX-License-Identifier: Apache-2.0
  */
 
 #include <dt-bindings/pinctrl/rpi-pico-rp2040-pinctrl.h>
 
 &pinctrl {
-	uart0_default: uart0_default {
-		group1 {
-			pinmux = <UART0_TX_P0>;
-		};
-		group2 {
-			pinmux = <UART0_RX_P1>;
+    pio1_uart0_default: pio1_uart0_default {
+		rx_pins {
+			pinmux = <PIO1_P1>;
 			input-enable;
+			bias-pull-up;
+		};
+		tx_pins {
+			pinmux = <PIO1_P0>;
 		};
 	};
+};
 
-	// through hole spi pinout
-	spi0_default: spi0_default {
-		group1 {
-			pinmux = <SPI0_TX_P23>;
-		};
-		group2 {
-			pinmux = <SPI0_RX_P20>;
-			input-enable;
-		};
-		group3 {
-			pinmux = <SPI0_SCK_P22>;
-		};
-	};
+&pio1 {
+ 	status = "okay";
 
-	// vik spi pinout
-	spi1_default: spi1_default {
-		group1 {
-			pinmux = <SPI1_TX_P15>;
-		};
-		group2 {
-			pinmux = <SPI1_RX_P12>;
-			input-enable;
-		};
-		group3 {
-			pinmux = <SPI1_SCK_P14>;
-		};
-	};
+	pio1_uart0: uart0 {
+		pinctrl-0 = <&pio1_uart0_default>;
+		pinctrl-names = "default";
 
-	// vik i2c pinout
-	i2c1_vik: i2c1_vik {
-		group1 {
-			pinmux = <I2C1_SDA_P10>, <I2C1_SCL_P11>;
-			input-enable;
-			input-schmitt-enable;
-		};
-	};
-
-	// through hole i2c pinout
-	i2c1_default: i2c1_default {
-		group1 {
-			pinmux = <I2C1_SDA_P2>, <I2C1_SCL_P3>;
-			input-enable;
-			input-schmitt-enable;
-		};
+		compatible = "raspberrypi,pico-uart-pio";
+		current-speed = <115200>;
+		status = "okay";
 	};
 };
