@@ -15,6 +15,38 @@
 		tx_pins {
 			pinmux = <PIO1_P0>;
 		};
+    };
+
+    pio1_uart0_splinktegrated_left_default: pio1_uart0_splinktegrated_left_default {
+		rx_pins {
+			pinmux = <PIO1_P1>;
+			input-enable;
+			bias-pull-up;
+		};
+		tx_pins {
+			pinmux = <PIO1_P12>;
+		};
+    };
+    pio1_uart0_splinktegrated_right_default: pio1_uart0_splinktegrated_right_default {
+		rx_pins {
+			pinmux = <PIO1_P12>;
+			input-enable;
+			bias-pull-up;
+		};
+		tx_pins {
+			pinmux = <PIO1_P1>;
+		};
+    };
+
+    uart0_default: uart0_default {
+        rx_pins {
+            pinmux = <UART0_TX_P0>;
+        };
+        tx_pins {
+            pinmux = <UART0_RX_P1>;
+			input-enable;
+			bias-pull-up;
+        };
 	};
 };
 
@@ -29,4 +61,29 @@
 		current-speed = <115200>;
 		status = "okay";
 	};
+
+	pio1_uart0_splinktegrated_left: pio1_uart0_splinktegrated_left {
+		pinctrl-0 = <&pio1_uart0_splinktegrated_left_default>;
+		pinctrl-names = "default";
+
+		compatible = "raspberrypi,pico-uart-pio";
+		current-speed = <115200>;
+		status = "okay";
+	};
+	pio1_uart0_splinktegrated_right: pio1_uart0_splinktegrated_right {
+		pinctrl-0 = <&pio1_uart0_splinktegrated_right_default>;
+		pinctrl-names = "default";
+
+		compatible = "raspberrypi,pico-uart-pio";
+		current-speed = <115200>;
+		status = "okay";
+	};
+};
+
+&uart0 {
+    status = "okay";
+    current-speed = <115200>;
+    pinctrl-0 = <&uart0_default>;
+    // pinctrl-names = "default", "sleep";
+    pinctrl-names = "default";
 };

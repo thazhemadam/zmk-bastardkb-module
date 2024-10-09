@@ -14,5 +14,9 @@ config ZMK_SPLIT
     default y
 config ZMK_SPLIT_SERIAL
     default y
+config ZMK_SPLIT_SERIAL_UART
+    default y
+config ZMK_SPLIT_SERIAL_UART_POLL
+    default n
 
 endif

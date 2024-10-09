@@ -24,3 +24,9 @@
 &bootloader_key_left {
     status = "okay";
 };
+
+/ {
+	chosen {
+        zmk,split-uart = &pio1_uart0_splinktegrated_left;
+	};
+};

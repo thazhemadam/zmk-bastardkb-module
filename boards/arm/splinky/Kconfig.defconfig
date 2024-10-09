@@ -10,4 +10,4 @@ config BOARD
 config RP2_FLASH_W25Q080
 	default y
 
-endif # BOARD_SVLINKY
+endif

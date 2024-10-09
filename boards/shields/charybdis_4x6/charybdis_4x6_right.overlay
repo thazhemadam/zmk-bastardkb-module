@@ -28,3 +28,10 @@
 &bootloader_key_right {
     status = "okay";
 };
+
+/ {
+	chosen {
+        zmk,split-uart = &pio1_uart0_splinktegrated_right;
+	};
+};
+
