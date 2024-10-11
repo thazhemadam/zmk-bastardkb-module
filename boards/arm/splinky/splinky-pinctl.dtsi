@@ -59,7 +59,7 @@
 
 		compatible = "raspberrypi,pico-uart-pio";
 		current-speed = <115200>;
-		status = "okay";
+		status = "disabled";
 	};
 
 	pio1_uart0_splinktegrated_left: pio1_uart0_splinktegrated_left {
@@ -68,7 +68,7 @@
 
 		compatible = "raspberrypi,pico-uart-pio";
 		current-speed = <115200>;
-		status = "okay";
+		status = "disabled";
 	};
 	pio1_uart0_splinktegrated_right: pio1_uart0_splinktegrated_right {
 		pinctrl-0 = <&pio1_uart0_splinktegrated_right_default>;
@@ -76,7 +76,7 @@
 
 		compatible = "raspberrypi,pico-uart-pio";
 		current-speed = <115200>;
-		status = "okay";
+		status = "disabled";
 	};
 };
 

@@ -35,3 +35,8 @@
 	};
 };
 
+&pio1 {
+	pio1_uart0_splinktegrated_right: pio1_uart0_splinktegrated_right {
+		status = "okay";
+	};
+};

@@ -30,3 +30,9 @@
         zmk,split-uart = &pio1_uart0_splinktegrated_left;
 	};
 };
+
+&pio1 {
+	pio1_uart0_splinktegrated_left: pio1_uart0_splinktegrated_left {
+		status = "okay";
+	};
+};
