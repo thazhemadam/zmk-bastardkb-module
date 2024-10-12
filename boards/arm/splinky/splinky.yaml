@@ -1,14 +1,21 @@
 identifier: splinky
-name: splinky
+name: Splinky
 type: mcu
 arch: arm
-flash: 8092
+flash: 8192
 ram: 264
 toolchain:
   - zephyr
   - gnuarmemb
   - xtools
 supported:
+  - uart
+  - gpio
+  - adc
   - i2c
   - spi
-  - serial
+  - hwinfo
+  - watchdog
+  - pwm
+  - flash
+  - dma

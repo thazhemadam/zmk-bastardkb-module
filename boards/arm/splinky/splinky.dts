@@ -1,6 +1,7 @@
 /*
  * Copyright (c) 2021 Yonatan Schachter
- * Copyright (c) 2024 burkfers
+ * Copyright (c) 2022 Peter Johanson
+ * Copyright (c) 2024, Nicolas Munnich
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -8,20 +9,22 @@
 /dts-v1/;
 
 #include <rpi_pico/rp2040.dtsi>
-#include "splinky-pinctl.dtsi"
+#include "splinky-pinctrl.dtsi"
+#include "elite_c_connector.dtsi"
 #include <freq.h>
 
 / {
-	model = "splinky";
-	compatible = "bastardkb,splinky", "raspberrypi,rp2040";
-
 	chosen {
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
-		//zephyr,console = &cdc_acm_uart;
+		zephyr,flash-controller = &ssi;
+		zephyr,console = &uart0;
+		zephyr,shell-uart = &uart0;
 		zephyr,code-partition = &code_partition;
-        // zmk,split-uart = &pio1_uart0;
-        // zmk,split-uart = &uart0;
+	};
+
+	aliases {
+		watchdog0 = &wdt0;
 	};
 
 	xtal_clk: xtal-clk {
@@ -31,62 +34,73 @@
 	};
 };
 
-#define SPLINKY_FLASH_SIZE_M 8
-
 &flash0 {
-	/* 8MB of flash minus the 0x100 used for
-	 * the second stage bootloader
-	 */
-	reg = <0x10000000 DT_SIZE_M(SPLINKY_FLASH_SIZE_M)>;
+	reg = <0x10000000 DT_SIZE_M(8)>;
 
 	partitions {
 		compatible = "fixed-partitions";
 		#address-cells = <1>;
 		#size-cells = <1>;
 
+		/* Reserved memory for the second stage bootloader */
+		second_stage_bootloader: partition@0 {
+			label = "second_stage_bootloader";
+			reg = <0x00000000 0x100>;
+			read-only;
+		};
+
 		/*
-		 * Start at the beginning of usable flash, SVLINKY_FLASH_SIZE_M MB minus the
-		 * second stage space and the 16 KiB reserved for settings
+		 * Usable flash. Starts at 0x100, after the bootloader. The partition
+		 * size is 8MB minus the 0x100 bytes taken by the bootloader.
 		 */
 		code_partition: partition@100 {
 			label = "code";
-			reg = <0x100 (DT_SIZE_M(SPLINKY_FLASH_SIZE_M) - 0x100)>;
+			reg = <0x100 (DT_SIZE_M(8) - 0x100)>;
 			read-only;
 		};
 	};
 };
 
-// &spi0 {
-// 	pinctrl-0 = <&spi0_default>;
-// 	pinctrl-names = "default";
-// 	clock-frequency = <DT_FREQ_M(2)>;
-// };
+&uart0 {
+	current-speed = <115200>;
+	status = "disabled";
+	pinctrl-0 = <&uart0_default>;
+	pinctrl-names = "default";
+};
 
-// &spi1 {
-// 	pinctrl-0 = <&spi1_default>;
-// 	pinctrl-names = "default";
-// 	clock-frequency = <DT_FREQ_M(2)>;
-// };
+&spi0 {
+	status = "okay";
+	pinctrl-0 = <&spi0_default>;
+	pinctrl-names = "default";
+	clock-frequency = <DT_FREQ_M(8)>;
+};
 
-// &i2c0 {
-// 	pinctrl-0 = <&i2c1_default>;
-// 	pinctrl-names = "default";
-// 	clock-frequency = <I2C_BITRATE_FAST>;
-// };
-
-// &i2c1 {
-// 	pinctrl-0 = <&i2c1_vik>;
-// 	pinctrl-names = "default";
-// 	clock-frequency = <I2C_BITRATE_FAST>;
-// };
+&i2c1 {
+	status = "okay";
+	pinctrl-0 = <&i2c1_default>;
+	pinctrl-names = "default";
+	clock-frequency = <I2C_BITRATE_FAST>;
+};
 
 &gpio0 {
 	status = "okay";
 };
 
+&wdt0 {
+	status = "okay";
+};
+
+&adc {
+	status = "okay";
+	pinctrl-0 = <&adc_default>;
+	pinctrl-names = "default";
+};
+
 zephyr_udc0: &usbd {
 	status = "okay";
-	cdc_acm_uart: cdc_acm_uart {
-		compatible = "zephyr,cdc-acm-uart";
-	};
+};
+
+&vreg {
+	regulator-always-on;
+	regulator-allowed-modes = <REGULATOR_RPI_PICO_MODE_NORMAL>;
 };

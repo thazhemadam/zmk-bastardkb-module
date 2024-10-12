@@ -1,6 +1,6 @@
 file_format: "1"
 id: splinky
-name: splinky
+name: Splinky
 type: board
 arch: arm
 outputs:
