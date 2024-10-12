@@ -1,3 +1,6 @@
+# Copyright (c) 2024 burkfers
+# SPDX-License-Identifier: MIT
+
 if SHIELD_CHARYBDIS_4X6_RIGHT
 
 config ZMK_KEYBOARD_NAME
