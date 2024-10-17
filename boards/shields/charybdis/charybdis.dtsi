@@ -15,11 +15,11 @@
 
 / {
     chosen {
-        zmk,physical-layout = &4x6_layout;
+        zmk,physical-layout = &charybdis_4x6_layout;
         zmk,split-uart = &pio0_uart0;
     };
 
-    4x6_transform: keymap_transform_0 {
+    charybdis_4x6_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <12>;
         rows = <5>;
