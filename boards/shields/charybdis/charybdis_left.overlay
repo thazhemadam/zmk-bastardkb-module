@@ -1,0 +1,32 @@
+#include "charybdis.dtsi"
+
+&pio0_uart0 {
+    pinctrl-0 = <&pio0_uart0_left>;
+};
+
+&kscan0 {
+    debounce-press-ms = <8>;
+    debounce-release-ms = <16>;
+    row-gpios
+        = <&splinktegrated_r 1>
+        , <&splinktegrated_r 2>
+        , <&splinktegrated_r 3>
+        , <&splinktegrated_r 4>
+        , <&splinktegrated_r 5>
+        ;
+
+    col-gpios
+        = <&splinktegrated_c 1>
+        , <&splinktegrated_c 2>
+        , <&splinktegrated_c 3>
+        , <&splinktegrated_c 4>
+        , <&splinktegrated_c 5>
+        , <&splinktegrated_c 6>
+        ;
+};
+
+/ {
+	chosen {
+        zmk,split-uart = &pio1_uart0_splinktegrated_left;
+	};
+};

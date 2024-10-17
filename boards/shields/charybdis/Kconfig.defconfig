@@ -1,0 +1,18 @@
+if SHIELD_CHARYBDIS_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "BastardKB Charybdis"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_CHARYBDIS_LEFT || SHIELD_CHARYBDIS_RIGHT
+
+config ZMK_SPLIT
+    default y
+config ZMK_SPLIT_SERIAL
+    default y
+
+endif

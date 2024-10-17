@@ -1,0 +1,10 @@
+#include <physical_layouts.dtsi>
+
+/ {
+    4x6_layout: 4x6_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "4x6 Layout";
+        transform = <&4x6_transform>;
+        kscan = <&kscan0>;
+    };
+};
