@@ -1,0 +1,2 @@
+config SHIELD_ELITE_C_HOLDER
+    def_bool $(shields_list_contains,elite_c_holder)

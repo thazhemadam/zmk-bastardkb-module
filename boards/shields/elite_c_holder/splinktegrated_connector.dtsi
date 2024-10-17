@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) 2020 Pete Johanson
+ * Copyright (c) 2024 burkfers
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/ {
+	splinktegrated_r: connector_r {
+		compatible = "bastardkb,splinktegrated-rows";
+		#gpio-cells = <1>;
+		gpio-map
+			= <1 &elite_c 29 GPIO_ACTIVE_HIGH>	
+			, <2 &elite_c 26 GPIO_ACTIVE_HIGH>	
+			, <3 &elite_c  5 GPIO_ACTIVE_HIGH>	
+			, <4 &elite_c  4 GPIO_ACTIVE_HIGH>	
+			, <5 &elite_c  9 GPIO_ACTIVE_HIGH>	
+			, <6 &elite_c  5 GPIO_ACTIVE_HIGH>	
+
+			;
+	};
+
+	splinktegrated_c: connector_c {
+		compatible = "bastardkb,splinktegrated-cols";
+		#gpio-cells = <1>;
+		gpio-map
+			= <1 &elite_c 27 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+			, <2 &elite_c 28 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+			, <3 &elite_c 21 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+			, <4 &elite_c  6 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+			, <5 &elite_c  7 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+			, <6 &elite_c  8 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+			;
+	};
+};
