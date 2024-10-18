@@ -24,9 +24,3 @@
         , <&splinktegrated_c 6>
         ;
 };
-
-/ {
-	chosen {
-        zmk,split-uart = &pio1_uart0_splinktegrated_left;
-	};
-};
