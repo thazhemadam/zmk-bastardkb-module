@@ -8,19 +8,19 @@
     debounce-press-ms = <8>;
     debounce-release-ms = <16>;
     row-gpios
-        = <&splinktegrated_r 1>
-        , <&splinktegrated_r 2>
-        , <&splinktegrated_r 3>
-        , <&splinktegrated_r 4>
-        , <&splinktegrated_r 5>
+        = <&splinktegrated_r 1 GPIO_ACTIVE_HIGH>
+        , <&splinktegrated_r 2 GPIO_ACTIVE_HIGH>
+        , <&splinktegrated_r 3 GPIO_ACTIVE_HIGH>
+        , <&splinktegrated_r 4 GPIO_ACTIVE_HIGH>
+        , <&splinktegrated_r 5 GPIO_ACTIVE_HIGH>
         ;
 
     col-gpios
-        = <&splinktegrated_c 1>
-        , <&splinktegrated_c 2>
-        , <&splinktegrated_c 3>
-        , <&splinktegrated_c 4>
-        , <&splinktegrated_c 5>
-        , <&splinktegrated_c 6>
+        = <&splinktegrated_c 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&splinktegrated_c 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&splinktegrated_c 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&splinktegrated_c 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&splinktegrated_c 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&splinktegrated_c 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
 };
