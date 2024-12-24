@@ -21,3 +21,7 @@ include:
     shield: elite_c_holder charybdis_left
   - board: splinky
     shield: elite_c_holder charybdis_right
+  - board: splinky
+    shield: charybdis_left splinterface
+  - board: splinky
+    shield: charybdis_right splinterface
