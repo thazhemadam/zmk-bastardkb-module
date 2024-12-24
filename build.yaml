@@ -23,5 +23,7 @@ include:
     shield: elite_c_holder charybdis_right
   - board: splinky
     shield: splinterface charybdis_left
+    snippet: zmk-usb-logging
   - board: splinky
     shield: splinterface charybdis_right
+    snippet: zmk-usb-logging
