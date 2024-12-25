@@ -4,12 +4,15 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: xudongzheng
       url-base: https://github.com/xudongzheng
+    - name: taz
+      url-base: https://github.com/thazhemadam
+
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
     - name: zmk
-      remote: xudongzheng
-      revision: split-serial-pr
+      remote: taz
+      revision: xudongzheng/split-serial=pr
       import: app/west.yml
   self:
     path: config
