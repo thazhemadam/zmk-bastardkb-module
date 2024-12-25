@@ -12,7 +12,7 @@ manifest:
   projects:
     - name: zmk
       remote: taz
-      revision: xudongzheng/split-serial=pr
+      revision: split-serial-pr-rebased
       import: app/west.yml
   self:
     path: config
