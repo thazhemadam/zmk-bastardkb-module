@@ -17,10 +17,10 @@
 #     artifact-name: corne_left_with_logging
 #
 include:
-  - board: splinky
-    shield: elite_c_holder charybdis_left
-  - board: splinky
-    shield: elite_c_holder charybdis_right
+  # - board: splinky
+  #   shield: elite_c_holder charybdis_left
+  # - board: splinky
+  #   shield: elite_c_holder charybdis_right
   - board: splinky
     shield: splinterface charybdis_left
     snippet: zmk-usb-logging
