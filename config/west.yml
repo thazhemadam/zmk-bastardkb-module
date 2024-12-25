@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/xudongzheng
     - name: taz
       url-base: https://github.com/thazhemadam
+    - name: bullwinkle3000
+      url-base: https://github.com/bullwinkle3000
 
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
@@ -14,5 +16,9 @@ manifest:
       remote: taz
       revision: xudongzheng/split-serial-pr
       import: app/west.yml
+    - name: zmk-pmw3610-driver
+      remote: taz
+      revision: pmw3360
+
   self:
     path: config
