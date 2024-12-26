@@ -20,3 +20,25 @@
         };
     };
 };
+
+&spi0 {
+    status = "okay";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-names = "default";
+    cs-gpios = <&gpio0 21 GPIO_ACTIVE_LOW>; // SPI CS
+
+    trackball: trackball@0 {
+        status = "okay";
+        compatible = "pixart,pmw3360";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // VIK GPIO 2
+    };
+};
+
+/ {
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
+};
