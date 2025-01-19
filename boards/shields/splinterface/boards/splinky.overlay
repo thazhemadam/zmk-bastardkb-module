@@ -1,4 +1,25 @@
 &pinctrl {
+    pio0_uart0_left: pio0_uart0_left {
+        rx_pins {
+            pinmux = <PIO0_P1>;
+            input-enable;
+            bias-pull-up;
+        };
+        tx_pins {
+            pinmux = <PIO0_P0>;
+        };
+    };
+    pio0_uart0_right: pio0_uart0_right {
+        rx_pins {
+            pinmux = <PIO0_P0>;
+            input-enable;
+            bias-pull-up;
+        };
+        tx_pins {
+            pinmux = <PIO0_P1>;
+        };
+    };
+
     /* configuration for an spi device using PIO0, default state  */
     pio0_spi_default: pio0_spi_default {
         group1 {
