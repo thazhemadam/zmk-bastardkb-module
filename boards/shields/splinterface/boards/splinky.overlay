@@ -32,10 +32,6 @@
     };
 };
 
-&spi0 {
-    status = "disabled";
-};
-
 &pio0 {
     status = "okay";
     pio0_spi: pio0_spi {
