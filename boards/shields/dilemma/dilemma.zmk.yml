@@ -1,0 +1,12 @@
+file_format: "1"
+id: dilemma
+name: Dilemma
+type: shield
+url: https://github.com/Bastardkb/Dilemma
+requires:
+  - splinktegrated
+features:
+  - keys
+siblings:
+  - dilemma_left
+  - dilemma_right

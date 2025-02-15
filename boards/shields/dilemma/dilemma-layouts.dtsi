@@ -1,0 +1,10 @@
+#include <physical_layouts.dtsi>
+
+/ {
+    dilemma_3x5_3_layout: dilemma_3x5_3_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "3x5_3 Layout";
+        transform = <&dilemma_3x5_3_transform>;
+        kscan = <&kscan0>;
+    };
+};
