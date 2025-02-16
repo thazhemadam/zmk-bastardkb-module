@@ -17,7 +17,11 @@
 #     artifact-name: corne_left_with_logging
 #
 include:
+  # - board: splinky
+  #   shield: elite_c_holder charybdis_left
+  # - board: splinky
+  #   shield: elite_c_holder charybdis_right
   - board: splinky
-    shield: elite_c_holder charybdis_left
+    shield: elite_c_holder dilemma_left
   - board: splinky
-    shield: elite_c_holder charybdis_right
+    shield: elite_c_holder dilemma_right
