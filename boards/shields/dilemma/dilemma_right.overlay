@@ -8,7 +8,7 @@
     col-offset = <5>;
 };
 
-// TODO: fix gpio
+// TODO: fix gpio definitions
 &kscan0 {
     debounce-press-ms = <8>;
     debounce-release-ms = <16>;

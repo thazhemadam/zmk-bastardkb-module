@@ -4,6 +4,7 @@
     pinctrl-0 = <&pio0_uart0_left>;
 };
 
+// TODO: fix gpio definitions
 &kscan0 {
     debounce-press-ms = <8>;
     debounce-release-ms = <16>;
