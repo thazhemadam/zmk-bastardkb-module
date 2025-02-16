@@ -22,6 +22,6 @@ include:
   # - board: splinky
   #   shield: elite_c_holder charybdis_right
   - board: splinky
-    shield: elite_c_holder dilemma_left
+    shield: dilemma_left
   - board: splinky
-    shield: elite_c_holder dilemma_right
+    shield: dilemma_right

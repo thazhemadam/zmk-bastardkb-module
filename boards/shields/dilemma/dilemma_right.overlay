@@ -8,24 +8,23 @@
     col-offset = <5>;
 };
 
-// TODO: fix gpio definitions
+// TODO: try to update definitions to use direct GPIO?
+// TODO: move into a common dtsi file
 &kscan0 {
-    debounce-press-ms = <8>;
-    debounce-release-ms = <16>;
+    // debounce-press-ms = <8>;
+    // debounce-release-ms = <16>;
     row-gpios
-        = <&splinktegrated_r 1 GPIO_ACTIVE_HIGH>
-        , <&splinktegrated_r 2 GPIO_ACTIVE_HIGH>
-        , <&splinktegrated_r 3 GPIO_ACTIVE_HIGH>
-        , <&splinktegrated_r 4 GPIO_ACTIVE_HIGH>
-        , <&splinktegrated_r 5 GPIO_ACTIVE_HIGH>
+        = <&pro_micro 18 GPIO_ACTIVE_HIGH> /* RP2040 GPIO 26 */
+        , <&pro_micro  4 GPIO_ACTIVE_HIGH> /* RP2040 GPIO 4  */
+        , <&pro_micro  5 GPIO_ACTIVE_HIGH> /* RP2040 GPIO 5  */
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH> /* RP2040 GPIO 27 */
         ;
 
     col-gpios
-        = <&splinktegrated_c 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&splinktegrated_c 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&splinktegrated_c 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&splinktegrated_c 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&splinktegrated_c 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&splinktegrated_c 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        = <&pro_micro  8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* RP2040 GPIO 8  */
+        , <&pro_micro  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* RP2040 GPIO 9  */
+        , <&pro_micro  7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* RP2040 GPIO 7  */
+        , <&pro_micro  6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* RP2040 GPIO 6  */
+        , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* RP2040 GPIO 28 */
         ;
 };
