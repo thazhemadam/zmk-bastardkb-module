@@ -10,10 +10,10 @@
     // debounce-press-ms = <8>;
     // debounce-release-ms = <16>;
     row-gpios
-        = <&pro_micro 18 GPIO_ACTIVE_HIGH> /* RP2040 GPIO 26 */
-        , <&pro_micro  4 GPIO_ACTIVE_HIGH> /* RP2040 GPIO 4  */
+        = <&pro_micro  4 GPIO_ACTIVE_HIGH> /* RP2040 GPIO 4  */
         , <&pro_micro  5 GPIO_ACTIVE_HIGH> /* RP2040 GPIO 5  */
         , <&pro_micro 19 GPIO_ACTIVE_HIGH> /* RP2040 GPIO 27 */
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH> /* RP2040 GPIO 26 */
         ;
 
     col-gpios
