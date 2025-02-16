@@ -7,10 +7,10 @@
         gpio-map
             = <0 0 &pro_micro  2>		/* vik SDA */
             , <1 0 &pro_micro  3>		/* vik SCL */
-            , <2 0 &pro_micro  0>		/* TODO: vik RGB Data */
-            , <3 0 &pro_micro  0>		/* TODO: vik AD_1 */
+            , <2 0 &gpio0     10>		/* TODO: vik RGB Data */
+            , <3 0 &gpio0     12>		/* TODO: vik AD_1 */
             , <4 0 &pro_micro 16>		/* vik MOSI */
-            , <5 0 &pro_micro  0>		/* TODO: vik AD_2 */
+            , <5 0 &gpio0     11>		/* TODO: vik AD_2 */
             , <6 0 &pro_micro 10>		/* vik CS */
             , <7 0 &pro_micro 14>		/* vik MISO */
             , <8 0 &pro_micro 15>		/* vik SCLK */
