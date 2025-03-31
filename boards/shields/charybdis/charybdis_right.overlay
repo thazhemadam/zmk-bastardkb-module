@@ -4,6 +4,14 @@
     pinctrl-0 = <&pio0_uart0_right>;
 };
 
+&charybdis_3x5_transform {
+    col-offset = <6>;
+};
+
+&charybdis_3x6_transform {
+    col-offset = <6>;
+};
+
 &charybdis_4x6_transform {
     col-offset = <6>;
 };

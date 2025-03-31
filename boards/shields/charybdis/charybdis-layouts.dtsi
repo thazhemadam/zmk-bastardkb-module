@@ -1,6 +1,20 @@
 #include <physical_layouts.dtsi>
 
 / {
+    charybdis_3x5_layout: charybdis_3x5_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "3x5 Layout";
+        transform = <&charybdis_3x5_transform>;
+        kscan = <&kscan0>;
+    };
+
+    charybdis_3x6_layout: charybdis_3x6_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "3x6 Layout";
+        transform = <&charybdis_3x6_transform>;
+        kscan = <&kscan0>;
+    };
+
     charybdis_4x6_layout: charybdis_4x6_layout {
         compatible = "zmk,physical-layout";
         display-name = "4x6 Layout";
