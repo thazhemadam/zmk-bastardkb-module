@@ -1,0 +1,6 @@
+if SHIELD_SPLINTERFACE
+
+config ZMK_KEYBOARD_NAME
+    default "Splinterface"
+
+endif

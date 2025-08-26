@@ -1,0 +1,68 @@
+&pinctrl {
+    pio0_uart0_left: pio0_uart0_left {
+        rx_pins {
+            pinmux = <PIO0_P1>;
+            input-enable;
+            bias-pull-up;
+        };
+        tx_pins {
+            pinmux = <PIO0_P0>;
+        };
+    };
+    pio0_uart0_right: pio0_uart0_right {
+        rx_pins {
+            pinmux = <PIO0_P0>;
+            input-enable;
+            bias-pull-up;
+        };
+        tx_pins {
+            pinmux = <PIO0_P1>;
+        };
+    };
+
+    /* configuration for an spi device using PIO0, default state  */
+    pio0_spi_default: pio0_spi_default {
+        group1 {
+            pinmux = <PIO0_P6>, <PIO0_P4>; // SCLK, MOSI
+        };
+        group2 {
+            pinmux = <PIO0_P7>; // MISO
+            input-enable;
+        };
+    };
+};
+
+&pio0 {
+    status = "okay";
+    pio0_spi: pio0_spi {
+        /* Assign pinctrl to node */
+        pinctrl-0 = <&pio0_spi_default>;
+        pinctrl-names = "default";
+        compatible = "raspberrypi,pico-spi-pio";
+        #address-cells = <1>;
+        #size-cells = <0>;
+        clocks = <&system_clk>;
+        clock-frequency = <4000000>;
+
+        miso-gpios = <&gpio0 7 0>;
+        clk-gpios  = <&gpio0 6 GPIO_ACTIVE_HIGH>;
+        mosi-gpios = <&gpio0 4 GPIO_ACTIVE_HIGH>;
+        cs-gpios =  <&gpio0 21 GPIO_ACTIVE_LOW>;
+
+        /* Nodes using the bus go here */
+        trackball: trackball@0 {
+            status = "okay";
+            compatible = "pixart,pmw3360";
+            reg = <0>;
+            spi-max-frequency = <2000000>;
+            irq-gpios = <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // VIK GPIO 2
+        };
+    };
+};
+
+/ {
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
+};
