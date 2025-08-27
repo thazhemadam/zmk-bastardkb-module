@@ -9,10 +9,12 @@
 /dts-v1/;
 
 #include <rpi_pico/rp2040.dtsi>
+#include <common/rp2-boot-mode-retention.dtsi>
+#include <freq.h>
+
 #include "splinky-pinctrl.dtsi"
 #include "elite_c_connector.dtsi"
 #include "sparkfun_pro_micro_connector.dtsi"
-#include <freq.h>
 
 / {
 	chosen {
