@@ -18,29 +18,29 @@
 #
 include:
   - board: splinky
-    shield: elite_c_holder charybdis_left
+    shield: splinktegrated charybdis_left
   - board: splinky
-    shield: elite_c_holder charybdis_right
+    shield: splinktegrated charybdis_right
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   - board: splinky
-    shield: elite_c_holder charybdis_mini_left
+    shield: splinktegrated charybdis_mini_left
   - board: splinky
-    shield: elite_c_holder charybdis_mini_right
+    shield: splinktegrated charybdis_mini_right
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   - board: splinky
-    shield: elite_c_holder charybdis_nano_left
+    shield: splinktegrated charybdis_nano_left
   - board: splinky
-    shield: elite_c_holder charybdis_nano_right
+    shield: splinktegrated charybdis_nano_right
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   - board: splinky
-    shield: elite_c_holder skeletyl_left
+    shield: splinktegrated skeletyl_left
   - board: splinky
-    shield: elite_c_holder skeletyl_right
+    shield: splinktegrated skeletyl_right
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y

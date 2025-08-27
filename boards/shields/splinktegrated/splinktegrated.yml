@@ -1,0 +1,10 @@
+file_format: "1"
+id: splinktegrated
+name: Splinktegrated
+type: shield # technically a shield, with a splinky board.
+url: https://github.com/Bastardkb/splinktegrated
+requires:
+  - pro_micro
+  - elite-c
+exposes:
+  - splinktegrated
