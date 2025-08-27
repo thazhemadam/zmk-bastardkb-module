@@ -21,3 +21,5 @@ include:
     shield: elite_c_holder charybdis_left
   - board: splinky
     shield: elite_c_holder charybdis_right
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
