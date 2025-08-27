@@ -1,0 +1,12 @@
+file_format: "1"
+id: charybdis_nano
+name: Charybdis
+type: shield
+url: https://github.com/Bastardkb/Charybdis
+requires:
+  - splinktegrated
+features:
+  - keys
+siblings:
+  - charybdis_nano_left
+  - charybdis_nano_right
