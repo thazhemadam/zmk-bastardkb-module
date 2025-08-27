@@ -58,3 +58,10 @@ include:
     shield: splinktegrated skeletyl_right
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
+
+  - board: splinky
+    shield: skeletyl_left splinterface
+  - board: splinky
+    shield: skeletyl_right splinterface
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
