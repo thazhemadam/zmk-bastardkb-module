@@ -1,6 +1,0 @@
-if SHIELD_ELITE_C_HOLDER
-
-config ZMK_KEYBOARD_NAME
-    default "BastardKB Elite-C-Holder"
-
-endif
