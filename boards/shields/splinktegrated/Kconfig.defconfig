@@ -1,0 +1,6 @@
+if SHIELD_SPLINKTEGRATED
+
+config ZMK_KEYBOARD_NAME
+    default "BastardKB Splinktegrated"
+
+endif
