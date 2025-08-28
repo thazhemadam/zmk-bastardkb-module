@@ -17,33 +17,33 @@
 #     artifact-name: corne_left_with_logging
 #
 include:
-  - board: splinky
-    shield: splinktegrated charybdis_left
-  - board: splinky
-    shield: splinktegrated charybdis_right
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: splinky
+  #   shield: splinktegrated charybdis_left
+  # - board: splinky
+  #   shield: splinktegrated charybdis_right
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  - board: splinky
-    shield: splinktegrated scylla_left
-  - board: splinky
-    shield: splinktegrated scylla_right
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: splinky
+  #   shield: splinktegrated scylla_left
+  # - board: splinky
+  #   shield: splinktegrated scylla_right
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  - board: splinky
-    shield: splinktegrated charybdis_mini_left
-  - board: splinky
-    shield: splinktegrated charybdis_mini_right
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: splinky
+  #   shield: splinktegrated charybdis_mini_left
+  # - board: splinky
+  #   shield: splinktegrated charybdis_mini_right
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  - board: splinky
-    shield: splinktegrated tbkmini_left
-  - board: splinky
-    shield: splinktegrated tbkmini_right
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: splinky
+  #   shield: splinktegrated tbkmini_left
+  # - board: splinky
+  #   shield: splinktegrated tbkmini_right
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   - board: splinky
     shield: splinktegrated charybdis_nano_left
@@ -52,9 +52,9 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  - board: splinky
-    shield: splinktegrated skeletyl_left
-  - board: splinky
-    shield: splinktegrated skeletyl_right
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: splinky
+  #   shield: splinktegrated skeletyl_left
+  # - board: splinky
+  #   shield: splinktegrated skeletyl_right
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
