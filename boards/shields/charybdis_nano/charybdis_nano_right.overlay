@@ -8,6 +8,29 @@
     col-offset = <5>;
 };
 
+&spi0 {
+    status = "okay";
+    cs-gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
+    trackball: trackball@0 {
+        compatible = "pixart,pmw3360";
+        status = "okay";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+
+        // PMW3360 driver parameters
+        irq-gpios = <&gpio0 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        cpi = <600>;
+        rotate-90;
+    };
+};
+
+/ {
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
+};
+
 // TODO: trim kscan
 &kscan0 {
     debounce-press-ms = <8>;
