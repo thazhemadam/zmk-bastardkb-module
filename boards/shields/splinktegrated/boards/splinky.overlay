@@ -19,4 +19,14 @@
             pinmux = <PIO0_P1>;
         };
     };
+
+    spi0_default: spi0_default {
+        group1 {
+            pinmux = <SPI0_CSN_P18>, <SPI0_SCK_P22>, <SPI0_TX_P23>;
+        };
+        group2 {
+            pinmux = <SPI0_RX_P20>;
+            input-enable;
+        };
+    };
 };
