@@ -1,9 +1,5 @@
 #include "charybdis_nano.dtsi"
 
-&pio0_uart0 {
-    pinctrl-0 = <&pio0_uart0_right>;
-};
-
 &charybdis_3x5_transform {
     col-offset = <5>;
 };
