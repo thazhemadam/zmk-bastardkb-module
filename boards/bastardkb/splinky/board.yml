@@ -1,0 +1,9 @@
+# Copyright (c) 2022 Pete Johanson
+# Copyright (c) 2024, Nicolas Munnich
+# SPDX-License-Identifier: Apache-2.0
+
+board:
+  name: splinky
+  vendor: bastardkb
+  socs:
+    - name: rp2040

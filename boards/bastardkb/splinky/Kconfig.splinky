@@ -3,8 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 config BOARD_SPLINKY
-	bool "Splinky Board"
-	depends on SOC_RP2040
+	select SOC_RP2040
 	imply RETAINED_MEM
 	imply RETENTION
 	imply RETENTION_BOOT_MODE
