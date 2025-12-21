@@ -8,8 +8,8 @@
 
 /dts-v1/;
 
-#include <rpi_pico/rp2040.dtsi>
-#include <common/rp2-boot-mode-retention.dtsi>
+#include <raspberrypi/rpi_pico/rp2040.dtsi>
+#include <arm/raspberrypi/rp2040-boot-mode-retention.dtsi>
 #include <freq.h>
 
 #include "splinky-pinctrl.dtsi"
@@ -28,12 +28,6 @@
 
 	aliases {
 		watchdog0 = &wdt0;
-	};
-
-	xtal_clk: xtal-clk {
-		compatible = "fixed-clock";
-		clock-frequency = <12000000>;
-		#clock-cells = <0>;
 	};
 };
 
@@ -106,4 +100,13 @@ zephyr_udc0: &usbd {
 &vreg {
 	regulator-always-on;
 	regulator-allowed-modes = <REGULATOR_RPI_PICO_MODE_NORMAL>;
+};
+
+&timer {
+	status = "okay";
+};
+
+&rtc {
+	clocks = <&clocks RPI_PICO_CLKID_CLK_RTC>;
+	status = "okay";
 };

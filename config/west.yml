@@ -10,8 +10,8 @@ manifest:
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
     - name: zmk
-      remote: taz
-      revision: bootloader/retention-boot-mode-support
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
     - name: zmk-driver-pmw3360
       remote: george-norton
