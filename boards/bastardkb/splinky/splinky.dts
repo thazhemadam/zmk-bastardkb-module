@@ -11,6 +11,7 @@
 #include <raspberrypi/rpi_pico/rp2040.dtsi>
 #include <arm/raspberrypi/rp2040-boot-mode-retention.dtsi>
 #include <freq.h>
+#include <dt-bindings/led/led.h>
 
 #include "splinky-pinctrl.dtsi"
 #include "elite_c_connector.dtsi"
@@ -24,6 +25,7 @@
 		zephyr,console = &uart0;
 		zephyr,shell-uart = &uart0;
 		zephyr,code-partition = &code_partition;
+		zmk,underglow = &led_strip;
 	};
 
 	aliases {
@@ -109,4 +111,27 @@ zephyr_udc0: &usbd {
 &rtc {
 	clocks = <&clocks RPI_PICO_CLKID_CLK_RTC>;
 	status = "okay";
+};
+
+&pio1 {
+	status = "okay";
+
+	pio1_ws2812: pio1_ws2812 {
+		compatible = "worldsemi,ws2812-rpi_pico-pio";
+		status = "okay";
+		pinctrl-0 = <&pio1_ws2812_default>;
+		pinctrl-names = "default";
+		bit-waveform = <3>, <3>, <4>;
+
+		led_strip: led_strip {
+			status = "okay";
+			gpios = <&gpio0 0 GPIO_ACTIVE_HIGH>;  /* Default GP0, shields can override */
+			chain-length = <36>;
+			color-mapping = <LED_COLOR_ID_GREEN
+					 LED_COLOR_ID_RED
+					 LED_COLOR_ID_BLUE>;
+			reset-delay = <280>;
+			frequency = <800000>;
+		};
+	};
 };
