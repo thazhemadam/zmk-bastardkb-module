@@ -7,6 +7,7 @@ requires:
   - splinktegrated
 features:
   - keys
+  - pointing
 siblings:
   - charybdis_mini_left
   - charybdis_mini_right
